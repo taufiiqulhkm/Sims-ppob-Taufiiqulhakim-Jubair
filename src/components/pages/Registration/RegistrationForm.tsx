@@ -91,6 +91,7 @@ const RegistrationForm = ({ onToggle }: RegistrationFormProps) => {
                     type="password"
                     icon={<Lock size={18} />}
                     required
+                    minLength={8}
                 />
                 <Input
                     name="confirm_password"
@@ -99,6 +100,7 @@ const RegistrationForm = ({ onToggle }: RegistrationFormProps) => {
                     type="password"
                     icon={<Lock size={18} />}
                     required
+                    minLength={8}
                 />
 
                 <Button type="submit">Registrasi</Button>

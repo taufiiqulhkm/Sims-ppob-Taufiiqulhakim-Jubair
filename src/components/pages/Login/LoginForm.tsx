@@ -68,6 +68,7 @@ const LoginForm = ({ onToggle }: LoginFormProps) => {
                     type="password"
                     icon={<Lock size={18} />}
                     required
+                    minLength={8}
                     error={passwordError ? " " : undefined} // Hanya ambil efek border merah tanpa teks di bawahnya
                     onChange={() => setPasswordError(false)}
                 />
