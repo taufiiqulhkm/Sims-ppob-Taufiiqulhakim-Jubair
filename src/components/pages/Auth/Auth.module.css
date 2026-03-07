@@ -1,0 +1,128 @@
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    /* Mencegah scroll */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.leftSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    height: 100%;
+    overflow-y: auto;
+    /* Jika form sangat panjang di layar kecil, hanya area form yang scroll */
+}
+
+.rightSide {
+    flex: 1;
+    background-color: #fff5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px;
+    /* Tambah padding agar ilustrasi mengecil */
+}
+
+.illustration {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.formContainer {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #4b5563;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.toggleLink {
+    color: #f42619;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.toggleLink:hover {
+    text-decoration: underline;
+}
+
+.notificationWrapper {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.notification {
+    background-color: #fff5f5;
+    border-radius: 4px;
+    padding: 10px 16px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+}
+
+.notificationContent {
+    color: #f42619;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: #f42619;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.closeButton:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .rightSide {
+        display: none;
+    }
+}

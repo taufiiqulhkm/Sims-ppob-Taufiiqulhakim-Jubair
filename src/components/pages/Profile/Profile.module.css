@@ -1,0 +1,147 @@
+.profileContainer {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.avatarSection {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 24px;
+}
+
+.avatarLarge,
+.initialsAvatarLarge {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.initialsAvatarLarge {
+    background-color: #ffe5e5;
+    color: #f42619;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 3px solid #f42619;
+}
+
+.editAvatarBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s;
+}
+
+.editAvatarBtn:hover {
+    background-color: #f9fafb;
+}
+
+.userNameLarge {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 40px;
+}
+
+.formGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: left;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputLabel {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.actionButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.editBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #f42619;
+    color: #f42619;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.editBtn:hover {
+    background-color: #fff5f5;
+}
+
+.logoutBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f42619;
+    border: 1px solid #f42619;
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.logoutBtn:hover {
+    opacity: 0.9;
+}
+
+.saveBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f42619;
+    border: 1px solid #f42619;
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cancelBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e5e7eb;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Hide file input */
+.fileInput {
+    display: none;
+}
