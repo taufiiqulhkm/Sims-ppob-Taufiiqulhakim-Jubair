@@ -5,7 +5,9 @@ import styles from "../../pages/Home/Home.module.css";
 const Navbar = () => {
     return (
         <nav className={styles.navbar}>
-            <Logo />
+            <NavLink to="/home" style={{ textDecoration: 'none' }}>
+                <Logo />
+            </NavLink>
             <div className={styles.navLinks}>
                 <NavLink
                     to="/topup"

@@ -121,6 +121,21 @@
     opacity: 1;
 }
 
+.successNotification {
+    background-color: #f0fdf4;
+    border: none;
+}
+
+.successContent {
+    color: #22c55e;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.successCloseButton {
+    color: #22c55e;
+}
+
 @media (max-width: 768px) {
     .rightSide {
         display: none;

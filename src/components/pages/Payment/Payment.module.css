@@ -1,0 +1,144 @@
+.paymentContainer {
+    min-height: 100vh;
+    background-color: white;
+}
+
+.paymentContent {
+    padding: 32px 10%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.serviceInfo {
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #4b5563;
+    margin: 0;
+}
+
+.serviceDetail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.serviceIcon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.serviceName {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.inputWrapper {
+    margin-bottom: 24px;
+    max-width: 100%;
+}
+
+.payBtn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+    background-color: #f42619;
+    color: white;
+}
+
+.payBtn:hover {
+    background-color: #d11f14;
+}
+
+.payBtn:disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Modal Content Styles */
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.modalLogo {
+    margin-bottom: 24px;
+}
+
+.modalSubtitle {
+    font-size: 14px;
+    color: #4b5563;
+    margin: 0 0 8px 0;
+}
+
+.modalAmount {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 24px 0;
+}
+
+.modalStatusText {
+    font-size: 14px;
+    color: #4b5563;
+    margin: -16px 0 24px 0;
+}
+
+.errorMessage {
+    color: #f42619;
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+.confirmBtn {
+    width: 100%;
+    color: #f42619;
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.cancelBtn {
+    width: 100%;
+    color: #9ca3af;
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.backBtn {
+    width: 100%;
+    color: #f42619;
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.iconSuccess,
+.iconError {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

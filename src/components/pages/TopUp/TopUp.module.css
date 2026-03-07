@@ -1,0 +1,223 @@
+.topUpContainer {
+    min-height: 100vh;
+    background-color: white;
+}
+
+.topUpContent {
+    padding: 32px 10%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.titleSection {
+    margin-bottom: 32px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #4b5563;
+    margin: 0;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+    margin: 4px 0 0 0;
+}
+
+.mainLayout {
+    display: flex;
+    gap: 64px;
+    align-items: flex-start;
+}
+
+.formSection {
+    flex: 2;
+}
+
+.nominalSection {
+    flex: 1;
+}
+
+.nominalGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.nominalBtn {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.nominalBtn:hover {
+    border-color: #f42619;
+    color: #f42619;
+}
+
+.nominalBtnActive {
+    border-color: #f42619;
+    background-color: #fef2f2;
+    color: #f42619;
+}
+
+.inputWrapper {
+    margin-bottom: 24px;
+}
+
+.topUpBtn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.topUpBtnActive {
+    background-color: #f42619;
+    color: white;
+}
+
+.topUpBtnDisabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.instructionsSection {
+    margin-top: 48px;
+}
+
+.instructionsTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.instructionsList {
+    list-style: none;
+    padding: 0;
+}
+
+.instructionItem {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.instructionItem::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #f42619;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Modal Content Styles */
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.modalLogo {
+    margin-bottom: 24px;
+}
+
+.modalSubtitle {
+    font-size: 14px;
+    color: #4b5563;
+    margin: 0 0 8px 0;
+}
+
+.modalAmount {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 24px 0;
+}
+
+.modalStatusText {
+    font-size: 14px;
+    color: #4b5563;
+    margin: -16px 0 24px 0;
+}
+
+.errorMessage {
+    color: #f42619;
+    font-size: 12px;
+    margin-bottom: 16px;
+}
+
+.confirmBtn {
+    width: 100%;
+    color: #f42619;
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.cancelBtn {
+    width: 100%;
+    color: #9ca3af;
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.backBtn {
+    width: 100%;
+    color: #f42619;
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.iconSuccess,
+.iconError {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .mainLayout {
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    .nominalGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

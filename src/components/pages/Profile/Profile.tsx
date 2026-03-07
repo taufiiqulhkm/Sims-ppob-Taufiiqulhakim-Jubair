@@ -6,12 +6,14 @@ import { setProfile, setLoading, setError } from "../../../store/slices/userSlic
 import { logout } from "../../../store/slices/authSlice";
 import Navbar from "../../ui/Navbar/Navbar";
 import Input from "../../ui/Input/Input";
+import Alert from "../../ui/Alert/Alert";
 import styles from "./Profile.module.css";
+import { userService } from "../../../services/user.service";
 
 const ProfilePage = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    const { profile, loading } = useAppSelector((state) => state.user);
+    const { profile, loading, error } = useAppSelector((state) => state.user);
     const { token } = useAppSelector((state) => state.auth);
 
     const [isEditing, setIsEditing] = useState(false);
@@ -35,6 +37,19 @@ const ProfilePage = () => {
         }
     }, [profile, isEditing]);
 
+    const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
+    // Auto-clear messages after 3 seconds
+    useEffect(() => {
+        if (error || successMessage) {
+            const timer = setTimeout(() => {
+                dispatch(setError(null));
+                setSuccessMessage(null);
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [error, successMessage, dispatch]);
+
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     const handleLogout = () => {
@@ -49,17 +64,10 @@ const ProfilePage = () => {
 
         dispatch(setLoading(true));
         try {
-            const response = await fetch("https://take-home-test-api.nutech-integrasi.com/profile/update", {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify(formData),
-            });
-            const data = await response.json();
+            const data = await userService.updateProfile(formData);
             if (data.status === 0) {
                 dispatch(setProfile(data.data));
+                setSuccessMessage("Update profil berhasil!");
                 setIsEditing(false);
             } else {
                 dispatch(setError(data.message));
@@ -86,14 +94,7 @@ const ProfilePage = () => {
 
         dispatch(setLoading(true));
         try {
-            const response = await fetch("https://take-home-test-api.nutech-integrasi.com/profile/image", {
-                method: "PUT",
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-                body: formDataImage,
-            });
-            const data = await response.json();
+            const data = await userService.updateImage(formDataImage);
             if (data.status === 0) {
                 dispatch(setProfile(data.data));
             } else {
@@ -109,6 +110,20 @@ const ProfilePage = () => {
     return (
         <div>
             <Navbar />
+            {error && (
+                <Alert
+                    message={error}
+                    type="error"
+                    onClose={() => dispatch(setError(null))}
+                />
+            )}
+            {successMessage && (
+                <Alert
+                    message={successMessage}
+                    type="success"
+                    onClose={() => setSuccessMessage(null)}
+                />
+            )}
             <div className={styles.profileContainer}>
                 {/* Avatar Section */}
                 <div className={styles.avatarSection}>

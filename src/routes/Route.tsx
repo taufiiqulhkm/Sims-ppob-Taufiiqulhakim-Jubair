@@ -2,9 +2,12 @@ import type { RouteObject } from "react-router-dom";
 import Home from "../components/pages/Home";
 import AuthPage from "../components/pages/Auth/AuthPage";
 import ProfilePage from "../components/pages/Profile/Profile";
+import TopUpPage from "../components/pages/TopUp";
+import PaymentPage from "../components/pages/Payment/Payment";
+import TransactionPage from "../components/pages/Transaction/Transaction";
 import ProtectedRoute from "./ProtectedRoute";
 
-const routes: RouteObject[] = [
+export const routes: RouteObject[] = [
     {
         path: "/",
         element: <AuthPage />
@@ -26,6 +29,30 @@ const routes: RouteObject[] = [
         element: (
             <ProtectedRoute>
                 <ProfilePage />
+            </ProtectedRoute>
+        )
+    },
+    {
+        path: "/topup",
+        element: (
+            <ProtectedRoute>
+                <TopUpPage />
+            </ProtectedRoute>
+        )
+    },
+    {
+        path: "/transaction",
+        element: (
+            <ProtectedRoute>
+                <TransactionPage />
+            </ProtectedRoute>
+        )
+    },
+    {
+        path: "/payment/:serviceCode",
+        element: (
+            <ProtectedRoute>
+                <PaymentPage />
             </ProtectedRoute>
         )
     }

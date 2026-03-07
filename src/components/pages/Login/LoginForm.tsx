@@ -8,6 +8,7 @@ import Input from "../../ui/Input/Input";
 import Logo from "../../ui/Logo/Logo";
 import Alert from "../../ui/Alert/Alert";
 import styles from "../Auth/Auth.module.css";
+import { authService } from "../../../services/auth.service";
 
 interface LoginFormProps {
     onToggle: () => void;
@@ -18,6 +19,7 @@ const LoginForm = ({ onToggle }: LoginFormProps) => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
+
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const form = event.currentTarget;
@@ -26,17 +28,12 @@ const LoginForm = ({ onToggle }: LoginFormProps) => {
 
         dispatch(setLoading(true));
         try {
-            const response = await fetch('https://take-home-test-api.nutech-integrasi.com/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password }),
-            });
-            const data = await response.json();
+            const data = await authService.login({ email, password });
             if (data.status === 0) {
                 dispatch(setToken(data.data.token));
                 navigate('/home');
             } else {
-                setFormError("password yang anda masukan salah");
+                setFormError(data.message);
                 setPasswordError(true);
             }
         } catch (err) {

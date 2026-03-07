@@ -7,6 +7,7 @@ import Input from "../../ui/Input/Input";
 import Logo from "../../ui/Logo/Logo";
 import Alert from "../../ui/Alert/Alert";
 import styles from "../Auth/Auth.module.css";
+import { authService } from "../../../services/auth.service";
 
 interface RegistrationFormProps {
     onToggle: () => void;
@@ -14,10 +15,14 @@ interface RegistrationFormProps {
 
 const RegistrationForm = ({ onToggle }: RegistrationFormProps) => {
     const [formError, setFormError] = useState<string | null>(null);
+    const [formSuccess, setFormSuccess] = useState<string | null>(null);
     const dispatch = useAppDispatch();
 
     const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        setFormError(null);
+        setFormSuccess(null);
+
         const form = event.currentTarget;
         const email = (form.elements.namedItem('email') as HTMLInputElement).value;
         const first_name = (form.elements.namedItem('first_name') as HTMLInputElement).value;
@@ -32,15 +37,13 @@ const RegistrationForm = ({ onToggle }: RegistrationFormProps) => {
 
         dispatch(setLoading(true));
         try {
-            const response = await fetch('https://take-home-test-api.nutech-integrasi.com/registration', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, first_name, last_name, password }),
-            });
-            const data = await response.json();
+            const data = await authService.register({ email, first_name, last_name, password });
             if (data.status === 0) {
-                alert("Registrasi berhasil! Silakan login.");
-                onToggle();
+                setFormSuccess(data.message);
+                // Beri jeda sedikit agar user bisa baca pesan sukses sebelum pindah ke login
+                setTimeout(() => {
+                    onToggle();
+                }, 2000);
             } else {
                 setFormError(data.message);
             }
@@ -110,6 +113,14 @@ const RegistrationForm = ({ onToggle }: RegistrationFormProps) => {
 
             {formError && (
                 <Alert message={formError} onClose={() => setFormError(null)} />
+            )}
+
+            {formSuccess && (
+                <Alert
+                    message={formSuccess}
+                    type="success"
+                    onClose={() => setFormSuccess(null)}
+                />
             )}
         </div>
     );
