@@ -97,6 +97,8 @@ const ProfilePage = () => {
             const data = await userService.updateImage(formDataImage);
             if (data.status === 0) {
                 dispatch(setProfile(data.data));
+                setSuccessMessage("Foto profil berhasil diperbarui!");
+                setImgError(false);
             } else {
                 alert(data.message);
             }
@@ -129,7 +131,7 @@ const ProfilePage = () => {
                 <div className={styles.avatarSection}>
                     {hasImage ? (
                         <img
-                            src={profile!.profile_image}
+                            src={`${profile!.profile_image}?t=${Date.now()}`}
                             alt="Profile"
                             className={styles.avatarLarge}
                             onError={() => setImgError(true)}

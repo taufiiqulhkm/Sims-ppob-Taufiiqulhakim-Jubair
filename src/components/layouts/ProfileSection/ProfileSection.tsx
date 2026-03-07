@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useAppSelector } from "../../../hooks/redux";
 import styles from "./ProfileSection.module.css";
@@ -11,6 +11,11 @@ const ProfileSection = () => {
     const hasImage = profile?.profile_image &&
         !profile.profile_image.includes('default') &&
         !imgError;
+
+    // Reset imgError when profile image changes
+    useEffect(() => {
+        setImgError(false);
+    }, [profile?.profile_image]);
 
     const formatCurrency = (amount: number | null | undefined) => {
         if (amount === null || amount === undefined || isNaN(amount)) return "Rp 0";
@@ -28,7 +33,7 @@ const ProfileSection = () => {
             <div className={styles.profileInfo}>
                 {hasImage ? (
                     <img
-                        src={profile!.profile_image}
+                        src={`${profile!.profile_image}?t=${Date.now()}`}
                         alt="Profile"
                         className={styles.avatar}
                         onError={() => setImgError(true)}
