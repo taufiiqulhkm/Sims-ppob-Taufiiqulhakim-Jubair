@@ -1,3 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f42619;
+  --color-primary-hover: #d81e14;
+  --color-secondary-border: #f42614;
+  --color-secondary-hover: #fff5f5;
+  
+  /* Gray shades from Input.module.css */
+  --color-custom-gray-dark: #374151;
+  --color-custom-gray-medium: #4b5563;
+  --color-custom-gray-light: #9ca3af;
+  --color-custom-gray-border: #d1d5db;
+  
+  --color-error: #ef4444;
+}
+
 * {
-    margin: 0;;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
 }

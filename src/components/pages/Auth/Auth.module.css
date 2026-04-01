@@ -1,143 +1,83 @@
+@reference "../../../styles/globals.css";
 .container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    /* Mencegah scroll */
+    @apply flex h-screen w-full overflow-hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .leftSide {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    height: 100%;
-    overflow-y: auto;
-    /* Jika form sangat panjang di layar kecil, hanya area form yang scroll */
+    @apply flex-1 flex flex-col justify-center items-center p-10 h-full overflow-y-auto;
 }
 
 .rightSide {
-    flex: 1;
-    background-color: #fff5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding: 60px;
-    /* Tambah padding agar ilustrasi mengecil */
+    @apply flex-1 bg-[#fff5f5] flex justify-center items-center relative overflow-hidden p-[60px];
 }
 
 .illustration {
-    max-width: 90%;
-    max-height: 90%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    @apply max-w-[90%] max-h-[90%] w-auto h-auto object-contain;
 }
 
 .formContainer {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
+    @apply w-full max-w-[400px] flex flex-col;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 32px;
+    @apply text-center mb-8;
 }
 
 .title {
-    font-size: 28px;
-    font-weight: 700;
-    color: #111827;
-    margin-top: 24px;
-    margin-bottom: 12px;
-    line-height: 1.2;
+    @apply text-[28px] font-bold text-gray-900 mt-6 mb-3 leading-tight;
 }
 
 .subtitle {
-    font-size: 16px;
-    color: #4b5563;
+    @apply text-[16px] text-custom-gray-medium;
 }
 
 .footer {
-    text-align: center;
-    margin-top: 24px;
-    font-size: 14px;
-    color: #6b7280;
+    @apply text-center mt-6 text-[14px] text-gray-500;
 }
 
 .toggleLink {
-    color: #f42619;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
+    @apply text-primary font-semibold no-underline cursor-pointer;
 }
 
 .toggleLink:hover {
-    text-decoration: underline;
+    @apply underline;
 }
 
 .notificationWrapper {
-    width: 100%;
-    margin-top: 40px;
+    @apply w-full mt-10;
 }
 
 .notification {
-    background-color: #fff5f5;
-    border-radius: 4px;
-    padding: 10px 16px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
+    @apply bg-[#fff5f5] rounded-[4px] px-4 py-[10px] w-full flex justify-between items-center border-none;
 }
 
 .notificationContent {
-    color: #f42619;
-    font-size: 13px;
-    font-weight: 400;
+    @apply text-primary text-[13px] font-normal;
 }
 
 .closeButton {
-    background: none;
-    border: none;
-    color: #f42619;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    opacity: 0.6;
+    @apply bg-transparent border-none text-primary cursor-pointer text-[14px] p-0 flex items-center opacity-60;
 }
 
 .closeButton:hover {
-    opacity: 1;
+    @apply opacity-100;
 }
 
 .successNotification {
-    background-color: #f0fdf4;
-    border: none;
+    @apply bg-[#f0fdf4] border-none;
 }
 
 .successContent {
-    color: #22c55e;
-    font-size: 13px;
-    font-weight: 400;
+    @apply text-green-500 text-[13px] font-normal;
 }
 
 .successCloseButton {
-    color: #22c55e;
+    @apply text-green-500;
 }
 
 @media (max-width: 768px) {
     .rightSide {
-        display: none;
+        @apply hidden;
     }
 }

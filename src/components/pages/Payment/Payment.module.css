@@ -1,144 +1,86 @@
+@reference "../../../styles/globals.css";
 .paymentContainer {
-    min-height: 100vh;
-    background-color: white;
+    @apply min-h-screen bg-white;
 }
 
 .paymentContent {
-    padding: 32px 10%;
-    max-width: 1440px;
-    margin: 0 auto;
+    @apply py-8 px-[10%] max-w-[1440px] mx-auto;
 }
 
 .serviceInfo {
-    margin-top: 32px;
-    margin-bottom: 24px;
+    @apply mt-8 mb-6;
 }
 
 .subtitle {
-    font-size: 18px;
-    color: #4b5563;
-    margin: 0;
+    @apply text-[18px] text-custom-gray-medium m-0;
 }
 
 .serviceDetail {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 8px;
+    @apply flex items-center gap-3 mt-2;
 }
 
 .serviceIcon {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
+    @apply w-8 h-8 object-contain;
 }
 
 .serviceName {
-    font-size: 24px;
-    font-weight: 800;
-    color: #111827;
+    @apply text-[24px] font-extrabold text-gray-900;
 }
 
 .inputWrapper {
-    margin-bottom: 24px;
-    max-width: 100%;
+    @apply mb-6 max-w-full;
 }
 
 .payBtn {
-    width: 100%;
-    padding: 14px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.2s;
-    background-color: #f42619;
-    color: white;
+    @apply w-full p-3.5 rounded-[4px] font-semibold text-[16px] cursor-pointer border-none transition-colors duration-200 bg-primary text-white;
 }
 
 .payBtn:hover {
-    background-color: #d11f14;
+    @apply bg-[#d11f14];
 }
 
 .payBtn:disabled {
-    background-color: #e5e7eb;
-    color: #9ca3af;
-    cursor: not-allowed;
+    @apply bg-gray-200 text-custom-gray-light cursor-not-allowed;
 }
 
 /* Modal Content Styles */
 .modalContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    @apply flex flex-col items-center text-center;
 }
 
 .modalLogo {
-    margin-bottom: 24px;
+    @apply mb-6;
 }
 
 .modalSubtitle {
-    font-size: 14px;
-    color: #4b5563;
-    margin: 0 0 8px 0;
+    @apply text-[14px] text-custom-gray-medium m-0 mb-2;
 }
 
 .modalAmount {
-    font-size: 24px;
-    font-weight: 800;
-    color: #111827;
-    margin: 0 0 24px 0;
+    @apply text-[24px] font-extrabold text-gray-900 m-0 mb-6;
 }
 
 .modalStatusText {
-    font-size: 14px;
-    color: #4b5563;
-    margin: -16px 0 24px 0;
+    @apply text-[14px] text-custom-gray-medium -mt-4 mb-6;
 }
 
 .errorMessage {
-    color: #f42619;
-    font-size: 12px;
-    margin-bottom: 16px;
+    @apply text-primary text-[12px] mb-4;
 }
 
 .confirmBtn {
-    width: 100%;
-    color: #f42619;
-    background: none;
-    border: none;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 16px;
-    cursor: pointer;
+    @apply w-full text-primary bg-transparent border-none font-bold text-[16px] mb-4 cursor-pointer;
 }
 
 .cancelBtn {
-    width: 100%;
-    color: #9ca3af;
-    background: none;
-    border: none;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
+    @apply w-full text-custom-gray-light bg-transparent border-none font-bold text-[16px] cursor-pointer;
 }
 
 .backBtn {
-    width: 100%;
-    color: #f42619;
-    background: none;
-    border: none;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
+    @apply w-full text-primary bg-transparent border-none font-bold text-[16px] cursor-pointer;
 }
 
 .iconSuccess,
 .iconError {
-    margin-bottom: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @apply mb-6 flex justify-center items-center;
 }

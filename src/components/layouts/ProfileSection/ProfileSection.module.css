@@ -1,108 +1,60 @@
+@reference "../../../styles/globals.css";
 .topSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 48px;
-    gap: 32px;
+    @apply flex justify-between items-center mb-12 gap-8;
 }
 
 .profileInfo {
-    flex: 1;
+    @apply flex-1;
 }
 
 .avatar,
 .initialsAvatar {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-bottom: 16px;
-    object-fit: cover;
+    @apply w-[70px] h-[70px] rounded-full mb-4 object-cover;
 }
 
 .initialsAvatar {
-    background-color: #ffe5e5;
-    color: #f42619;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 2px solid #f42619;
+    @apply bg-[#ffe5e5] text-primary flex justify-center items-center text-[24px] font-bold uppercase border-2 border-primary;
 }
 
 .welcomeText {
-    font-size: 18px;
-    color: #6b7280;
-    margin: 0;
+    @apply text-[18px] text-gray-500 m-0;
 }
 
 .userName {
-    font-size: 32px;
-    font-weight: 800;
-    color: #111827;
-    margin: 4px 0 0 0;
+    @apply text-[32px] font-extrabold text-gray-900 mt-1 mb-0;
 }
 
 /* Balance Card */
 .balanceCard {
-    flex: 1.5;
-    background: linear-gradient(135deg, #f42619 0%, #ff5c5c 100%);
-    border-radius: 20px;
-    padding: 24px 28px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    min-height: 160px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @apply flex-[1.5] bg-gradient-to-br from-[#f42619] to-[#ff5c5c] rounded-[20px] p-6 px-7 text-white relative overflow-hidden min-h-[160px] flex flex-col justify-between;
 }
 
 .balanceLabel {
-    font-size: 16px;
-    font-weight: 500;
+    @apply text-[16px] font-medium;
 }
 
 .balanceAmount {
-    font-size: 32px;
-    font-weight: 700;
-    margin: 12px 0;
+    @apply text-[32px] font-bold my-3;
 }
 
 .showBalanceBtn {
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 13px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0;
+    @apply bg-transparent border-none text-white/90 text-[13px] cursor-pointer flex items-center gap-[6px] p-0;
 }
 
 .showBalanceBtn:hover {
-    color: white;
+    @apply text-white;
 }
 
 .balanceBgPattern {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    opacity: 0.15;
-    pointer-events: none;
+    @apply absolute right-0 top-0 h-full opacity-[0.15] pointer-events-none;
 }
 
 @media (max-width: 768px) {
     .topSection {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
+        @apply flex-col items-start gap-6;
     }
 
     .balanceCard {
-        width: 100%;
+        @apply w-full;
     }
 }

@@ -1,223 +1,142 @@
+@reference "../../../styles/globals.css";
 .topUpContainer {
-    min-height: 100vh;
-    background-color: white;
+    @apply min-h-screen bg-white;
 }
 
 .topUpContent {
-    padding: 32px 10%;
-    max-width: 1440px;
-    margin: 0 auto;
+    @apply py-8 px-[10%] max-w-[1440px] mx-auto;
 }
 
 .titleSection {
-    margin-bottom: 32px;
+    @apply mb-8;
 }
 
 .subtitle {
-    font-size: 18px;
-    color: #4b5563;
-    margin: 0;
+    @apply text-[18px] text-custom-gray-medium m-0;
 }
 
 .title {
-    font-size: 32px;
-    font-weight: 800;
-    color: #111827;
-    margin: 4px 0 0 0;
+    @apply text-[32px] font-extrabold text-gray-900 mt-1 mb-0;
 }
 
 .mainLayout {
-    display: flex;
-    gap: 64px;
-    align-items: flex-start;
+    @apply flex gap-16 items-start;
 }
 
 .formSection {
-    flex: 2;
+    @apply flex-[2];
 }
 
 .nominalSection {
-    flex: 1;
+    @apply flex-1;
 }
 
 .nominalGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 24px;
+    @apply grid grid-cols-3 gap-4 mb-6;
 }
 
 .nominalBtn {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    padding: 12px;
-    font-size: 14px;
-    color: #374151;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
+    @apply bg-white border border-gray-200 rounded-[4px] p-3 text-[14px] text-custom-gray-dark cursor-pointer transition-all duration-200 text-center;
 }
 
 .nominalBtn:hover {
-    border-color: #f42619;
-    color: #f42619;
+    @apply border-primary text-primary;
 }
 
 .nominalBtnActive {
-    border-color: #f42619;
-    background-color: #fef2f2;
-    color: #f42619;
+    @apply border-primary bg-[#fef2f2] text-primary;
 }
 
 .inputWrapper {
-    margin-bottom: 24px;
+    @apply mb-6;
 }
 
 .topUpBtn {
-    width: 100%;
-    padding: 14px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.2s;
+    @apply w-full p-3.5 rounded-[4px] font-semibold text-[16px] cursor-pointer border-none transition-colors duration-200;
 }
 
 .topUpBtnActive {
-    background-color: #f42619;
-    color: white;
+    @apply bg-primary text-white;
 }
 
 .topUpBtnDisabled {
-    background-color: #e5e7eb;
-    color: #9ca3af;
-    cursor: not-allowed;
+    @apply bg-gray-200 text-custom-gray-light cursor-not-allowed;
 }
 
 .instructionsSection {
-    margin-top: 48px;
+    @apply mt-12;
 }
 
 .instructionsTitle {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 16px;
+    @apply text-[18px] font-bold mb-4;
 }
 
 .instructionsList {
-    list-style: none;
-    padding: 0;
+    @apply list-none p-0;
 }
 
 .instructionItem {
-    position: relative;
-    padding-left: 24px;
-    margin-bottom: 16px;
-    font-size: 14px;
-    color: #4b5563;
-    line-height: 1.6;
+    @apply relative pl-6 mb-4 text-[14px] text-custom-gray-medium leading-relaxed;
 }
 
 .instructionItem::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #f42619;
-    font-weight: bold;
+    @apply content-['•'] absolute left-0 text-primary font-bold;
 }
 
 .bold {
-    font-weight: 700;
-    color: #111827;
+    @apply font-bold text-gray-900;
 }
 
 /* Modal Content Styles */
 .modalContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    @apply flex flex-col items-center text-center;
 }
 
 .modalLogo {
-    margin-bottom: 24px;
+    @apply mb-6;
 }
 
 .modalSubtitle {
-    font-size: 14px;
-    color: #4b5563;
-    margin: 0 0 8px 0;
+    @apply text-[14px] text-custom-gray-medium m-0 mb-2;
 }
 
 .modalAmount {
-    font-size: 24px;
-    font-weight: 800;
-    color: #111827;
-    margin: 0 0 24px 0;
+    @apply text-[24px] font-extrabold text-gray-900 m-0 mb-6;
 }
 
 .modalStatusText {
-    font-size: 14px;
-    color: #4b5563;
-    margin: -16px 0 24px 0;
+    @apply text-[14px] text-custom-gray-medium -mt-4 mb-6;
 }
 
 .errorMessage {
-    color: #f42619;
-    font-size: 12px;
-    margin-bottom: 16px;
+    @apply text-primary text-[12px] mb-4;
 }
 
 .confirmBtn {
-    width: 100%;
-    color: #f42619;
-    background: none;
-    border: none;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 16px;
-    cursor: pointer;
+    @apply w-full text-primary bg-transparent border-none font-bold text-[16px] mb-4 cursor-pointer;
 }
 
 .cancelBtn {
-    width: 100%;
-    color: #9ca3af;
-    background: none;
-    border: none;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
+    @apply w-full text-custom-gray-light bg-transparent border-none font-bold text-[16px] cursor-pointer;
 }
 
 .backBtn {
-    width: 100%;
-    color: #f42619;
-    background: none;
-    border: none;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
+    @apply w-full text-primary bg-transparent border-none font-bold text-[16px] cursor-pointer;
 }
 
 .iconSuccess,
 .iconError {
-    margin-bottom: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @apply mb-6 flex justify-center items-center;
 }
 
 @media (max-width: 1024px) {
     .mainLayout {
-        flex-direction: column;
-        gap: 32px;
+        @apply flex-col gap-8;
     }
 }
 
 @media (max-width: 640px) {
     .nominalGrid {
-        grid-template-columns: repeat(2, 1fr);
+        @apply grid-cols-2;
     }
 }

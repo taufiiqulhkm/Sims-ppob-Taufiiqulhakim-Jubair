@@ -1,115 +1,77 @@
+@reference "../../../styles/globals.css";
 .container {
-    min-height: 100vh;
-    background-color: white;
+    @apply min-h-screen bg-white;
 }
 
 .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 32px 24px;
+    @apply max-w-[1200px] mx-auto py-8 px-6;
 }
 
 .titleSection {
-    margin-top: 40px;
-    margin-bottom: 24px;
+    @apply mt-10 mb-6;
 }
 
 .title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #111827;
+    @apply text-[18px] font-bold text-gray-900;
 }
 
 .transactionList {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    @apply flex flex-col gap-4;
 }
 
 .transactionItem {
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 16px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    @apply border border-gray-200 rounded-[8px] py-4 px-6 flex flex-col gap-2;
 }
 
 .itemHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @apply flex justify-between items-center;
 }
 
 .amountPositive {
-    font-size: 20px;
-    font-weight: 700;
-    color: #00C853;
+    @apply text-[20px] font-bold text-[#00C853];
 }
 
 .amountNegative {
-    font-size: 20px;
-    font-weight: 700;
-    color: #F42619;
+    @apply text-[20px] font-bold text-primary;
 }
 
 .itemDescription {
-    font-size: 12px;
-    color: #111827;
-    font-weight: 500;
+    @apply text-[12px] text-gray-900 font-medium;
 }
 
 .itemFooter {
-    display: flex;
-    justify-content: flex-start;
+    @apply flex justify-start;
 }
 
 .itemDate {
-    font-size: 12px;
-    color: #9ca3af;
+    @apply text-[12px] text-custom-gray-light;
 }
 
 .paginationActions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin-top: 24px;
+    @apply flex flex-col items-center gap-2 mt-6;
 }
 
 .showMoreBtn,
 .showLessBtn {
-    background: none;
-    border: none;
-    color: #F42619;
-    font-weight: 700;
-    font-size: 14px;
-    cursor: pointer;
-    transition: opacity 0.2s;
+    @apply bg-transparent border-none text-primary font-bold text-[14px] cursor-pointer transition-opacity duration-200;
 }
 
 .showMoreBtn:disabled,
 .showLessBtn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+    @apply opacity-50 cursor-not-allowed;
 }
 
 .emptyState {
-    text-align: center;
-    padding: 60px 0;
-    color: #9ca3af;
-    font-size: 14px;
+    @apply text-center py-[60px] text-custom-gray-light text-[14px];
 }
 
 @media (max-width: 640px) {
     .itemHeader {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
+        @apply flex-col items-start gap-1;
     }
 
     .amountPositive,
     .amountNegative {
-        font-size: 18px;
+        @apply text-[18px];
     }
 }

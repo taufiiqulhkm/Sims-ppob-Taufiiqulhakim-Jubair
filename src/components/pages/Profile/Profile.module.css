@@ -1,147 +1,74 @@
+@reference "../../../styles/globals.css";
 .profileContainer {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: center;
+    @apply max-w-[600px] mx-auto mt-10 mb-10 px-5 text-center;
 }
 
 .avatarSection {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 24px;
+    @apply relative w-[120px] h-[120px] mx-auto mb-6;
 }
 
 .avatarLarge,
 .initialsAvatarLarge {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid #e5e7eb;
+    @apply w-[120px] h-[120px] rounded-full object-cover border border-gray-200;
 }
 
 .initialsAvatarLarge {
-    background-color: #ffe5e5;
-    color: #f42619;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 3px solid #f42619;
+    @apply bg-[#ffe5e5] text-primary flex justify-center items-center text-[40px] font-bold uppercase border-[3px] border-primary;
 }
 
 .editAvatarBtn {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 32px;
-    height: 32px;
-    background-color: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.2s;
+    @apply absolute bottom-0 right-0 w-8 h-8 bg-white border border-gray-200 rounded-full flex justify-center items-center cursor-pointer shadow-sm transition-colors duration-200;
 }
 
 .editAvatarBtn:hover {
-    background-color: #f9fafb;
+    @apply bg-gray-50;
 }
 
 .userNameLarge {
-    font-size: 28px;
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 40px;
+    @apply text-[28px] font-bold text-gray-900 mb-10;
 }
 
 .formGrid {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    text-align: left;
+    @apply flex flex-col gap-6 text-left;
 }
 
 .inputGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    @apply flex flex-col gap-2;
 }
 
 .inputLabel {
-    font-size: 14px;
-    font-weight: 500;
-    color: #374151;
+    @apply text-[14px] font-medium text-custom-gray-dark;
 }
 
 .actionButtons {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 32px;
+    @apply flex flex-col gap-4 mt-8;
 }
 
 .editBtn {
-    width: 100%;
-    padding: 12px;
-    background-color: transparent;
-    border: 1px solid #f42619;
-    color: #f42619;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    @apply w-full p-3 bg-transparent border border-primary text-primary rounded-[4px] font-semibold cursor-pointer transition-colors duration-200;
 }
 
 .editBtn:hover {
-    background-color: #fff5f5;
+    @apply bg-[#fff5f5];
 }
 
 .logoutBtn {
-    width: 100%;
-    padding: 12px;
-    background-color: #f42619;
-    border: 1px solid #f42619;
-    color: white;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.2s;
+    @apply w-full p-3 bg-primary border border-primary text-white rounded-[4px] font-semibold cursor-pointer transition-opacity duration-200;
 }
 
 .logoutBtn:hover {
-    opacity: 0.9;
+    @apply opacity-90;
 }
 
 .saveBtn {
-    width: 100%;
-    padding: 12px;
-    background-color: #f42619;
-    border: 1px solid #f42619;
-    color: white;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
+    @apply w-full p-3 bg-primary border border-primary text-white rounded-[4px] font-semibold cursor-pointer;
 }
 
 .cancelBtn {
-    width: 100%;
-    padding: 12px;
-    background-color: #e5e7eb;
-    border: 1px solid #e5e7eb;
-    color: #374151;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
+    @apply w-full p-3 bg-gray-200 border border-gray-200 text-custom-gray-dark rounded-[4px] font-semibold cursor-pointer;
 }
 
 /* Hide file input */
 .fileInput {
-    display: none;
+    @apply hidden;
 }

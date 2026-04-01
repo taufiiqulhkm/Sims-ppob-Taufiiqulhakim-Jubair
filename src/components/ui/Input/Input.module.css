@@ -1,83 +1,53 @@
+@reference "../../../styles/globals.css";
+
 .inputWrapper {
-    width: 100%;
-    margin-bottom: 16px;
+    @apply w-full mb-4;
 }
 
 .label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #374151;
+    @apply block mb-[6px] text-[14px] font-medium text-custom-gray-dark;
 }
 
 .inputContainer {
-    position: relative;
-    display: flex;
-    align-items: center;
+    @apply relative flex items-center;
 }
 
 .icon {
-    position: absolute;
-    left: 12px;
-    color: #9ca3af;
-    display: flex;
-    align-items: center;
-    pointer-events: none;
+    @apply absolute left-3 text-custom-gray-light flex items-center pointer-events-none;
 }
 
 .input {
-    height: 48px;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #d1d5db;
-    background-color: white;
-    padding: 8px 12px;
-    font-size: 14px;
-    transition: all 0.2s;
-    outline: none;
+    @apply h-[48px] w-full rounded-[4px] border border-custom-gray-border bg-white px-3 py-2 text-[14px] transition-all duration-200 outline-none;
 }
 
 .withIcon {
-    padding-left: 40px;
+    @apply pl-10;
 }
 
 .withPassword {
-    padding-right: 40px;
+    @apply pr-10;
 }
 
 .input:focus {
-    border-color: #f42619;
-    box-shadow: 0 0 0 1px #f42619;
+    @apply border-primary ring-1 ring-primary;
 }
 
 .errorInput {
-    border-color: #ef4444;
+    @apply border-error;
 }
 
 .errorInput:focus {
-    border-color: #ef4444;
-    box-shadow: 0 0 0 1px #ef4444;
+    @apply border-error ring-1 ring-error;
 }
 
 .eyeButton {
-    position: absolute;
-    right: 12px;
-    background: none;
-    border: none;
-    color: #9ca3af;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
+    @apply absolute right-3 bg-none border-none text-custom-gray-light cursor-pointer p-0 flex items-center;
 }
 
 .eyeButton:hover {
-    color: #4b5563;
+    @apply text-custom-gray-medium;
 }
 
 .errorMessage {
-    margin-top: 4px;
-    font-size: 12px;
-    color: #ef4444;
+    @apply mt-1 text-[12px] text-error;
 }
